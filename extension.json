@@ -9,18 +9,6 @@
   "parameters": {
     "instance": [
       {
-        "id": "api_key",
-        "name": "api key name for cloudinary",
-        "type": "Symbol",
-        "required": false
-      },
-      {
-        "id": "api_secret",
-        "name": "api secret name for cloudinary",
-        "type": "Symbol",
-        "required": false
-      },
-      {
         "id": "cloud_name",
         "name": "cloud name for cloudinary",
         "type": "Symbol",
