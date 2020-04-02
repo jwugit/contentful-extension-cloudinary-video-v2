@@ -1,0 +1,43 @@
+{
+  "id": "cloudinary-video",
+  "name": "cloudinary-video",
+  "srcdoc": "./build/index.html",
+  "fieldTypes": [
+    "Symbol",
+    "Text"
+  ],
+  "parameters": {
+    "instance": [
+      {
+        "id": "api_key",
+        "name": "api key name for cloudinary",
+        "type": "Symbol",
+        "required": false
+      },
+      {
+        "id": "api_secret",
+        "name": "api secret name for cloudinary",
+        "type": "Symbol",
+        "required": false
+      },
+      {
+        "id": "cloud_name",
+        "name": "cloud name for cloudinary",
+        "type": "Symbol",
+        "required": true
+      },
+      {
+        "id": "preset",
+        "name": "upload preset name for cloudinary",
+        "type": "Symbol",
+        "required": true
+      },
+      {
+        "id": "tag",
+        "name": "tag name to find files the preset generates",
+        "type": "Symbol",
+        "required": true
+      }
+    ]
+  }
+}

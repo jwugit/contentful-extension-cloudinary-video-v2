@@ -1,0 +1,41 @@
+html,
+body,
+div {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.btnControl {
+  margin-right: 10px;
+}
+
+.showPreview {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.vidList {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  max-height: 800px;
+}
+
+.vidList >div {
+  margin: 10px;
+  width: 300px;
+}
+
+.vidName {
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+.widget-container {
+  position: relative;
+  height: 800px;
+}
