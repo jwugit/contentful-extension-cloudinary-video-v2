@@ -8,3 +8,16 @@ for using in contentful CMS to allow video upload to cloudinary and select one v
 - cloud name
 - upload preset
 - tag filter
+
+require a file name `.contentfulrc.json`
+
+wih the following
+```
+{
+  "managementToken": "",
+  "activeSpaceId": "",
+  "activeEnvironmentId": "master",
+  "host": "api.contentful.com"
+}
+
+```
