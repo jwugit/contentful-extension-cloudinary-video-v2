@@ -49,8 +49,16 @@ export class App extends React.Component {
     }
   }
 
+  tryJsonParse = (text) => {
+    try {
+      return JSON.parse(text)
+    } catch (e) {
+      return ""
+    }
+  }
+
   onExternalChange = value => {
-    this.setState({ value });
+    this.setState({ value: this.tryJsonParse(value) });
   };
 
   handleClose = () => {
@@ -80,9 +88,9 @@ export class App extends React.Component {
     })
   }
 
-  handleSelectSingle = (public_id) => {
+  handleSelectSingle = (cloudValue) => {
     this.setState({action: 'single'})
-    this.props.sdk.field.setValue(public_id);
+    this.props.sdk.field.setValue(JSON.stringify(cloudValue));
   }
 
   render() {
@@ -91,8 +99,9 @@ export class App extends React.Component {
       return <div>Error: not configured properly, please contact your space admin</div>
     }
     const {action, errMsg, list} = this.state
-    const public_id = this.props.sdk.field.getValue() || ''
-
+    const cloudValue = this.props.sdk.field.getValue() || ''
+    let cloudValueJSON = this.tryJsonParse(cloudValue)
+    let public_id = (cloudValueJSON && cloudValueJSON.public_id) || ''
 
     return (
       <div>
@@ -124,7 +133,7 @@ export class App extends React.Component {
                 <Transformation width="300" height="200" crop="fit" />
               </Video>
               <div className="vidName">{r.public_id}</div>
-              <Button buttonType="primary" onClick={() => this.handleSelectSingle(r.public_id)}>Select Video</Button>
+              <Button buttonType="primary" onClick={() => this.handleSelectSingle(r)}>Select Video</Button>
             </div>
           })}
         </div>}
