@@ -39,3 +39,6 @@ div {
   position: relative;
   height: 800px;
 }
+video {
+  max-width: 300px;
+}
